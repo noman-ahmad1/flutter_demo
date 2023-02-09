@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Navigator.push(context, MaterialPageRoute(builder: (context)=> const SignInScreen()));
                       },
                       child: const Center(
-                        child: Text('Sign In With Phone Number',
+                        child: Text('Sign In With Phone Number 123',
                         style: TextStyle(
                           color: Colors.white,
                         ),
