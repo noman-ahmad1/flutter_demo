@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_application_1/screens/email_auth/sign_in_screen.dart';
+import 'home_screen.dart';
 
 
 class DashboardScreen extends StatefulWidget {
@@ -18,7 +18,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             Navigator.popUntil(context, (route) => route.isFirst);
             
             // ignore: use_build_context_synchronously
-            Navigator.pushReplacement(context, CupertinoPageRoute(builder: ((context) => const SignInScreen())));
+            Navigator.pushReplacement(context, CupertinoPageRoute(builder: ((context) => const HomeScreen())));
   }
 
   @override

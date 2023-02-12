@@ -1,10 +1,8 @@
 
 // ignore_for_file: depend_on_referenced_packages
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_application_1/screens/dashboard_screen.dart';
-import 'package:practice_application_1/screens/email_auth/sign_in_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:practice_application_1/screens/home_screen.dart';
 import 'firebase_options.dart';

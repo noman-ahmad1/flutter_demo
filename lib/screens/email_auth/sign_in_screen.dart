@@ -1,10 +1,8 @@
 import 'dart:developer';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_application_1/screens/email_auth/sign_up_screen.dart';
-
 import '../dashboard_screen.dart';
 
 class SignInScreen extends StatefulWidget {

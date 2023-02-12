@@ -1,8 +1,9 @@
+
+import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:practice_application_1/screens/phone_auth/verify_otp.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignInPhoneScreen extends StatefulWidget {
   const SignInPhoneScreen({super.key});
@@ -12,6 +13,29 @@ class SignInPhoneScreen extends StatefulWidget {
 }
 
 class _SignInPhoneScreenState extends State<SignInPhoneScreen> {
+
+  TextEditingController phoneController = TextEditingController();
+
+  void sendOtp() async {
+    // ignore: prefer_interpolation_to_compose_strings
+    String phone = "+92" + phoneController.text.trim();
+    await FirebaseAuth.instance.verifyPhoneNumber(
+      phoneNumber: phone,
+      codeSent: (verificationId, resendToken){
+        Navigator.push(context, CupertinoPageRoute(builder: ((context) =>  OtpScreen(verificationId: verificationId)
+        )));
+      },
+      // ignore: avoid_types_as_parameter_names, non_constant_identifier_names
+      verificationCompleted: (Credential){},
+      verificationFailed: (exp){
+        log(exp.code.toString());
+      },
+      codeAutoRetrievalTimeout: (verificationId) {},
+      timeout: const Duration(seconds: 30)
+    );
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,10 +46,11 @@ class _SignInPhoneScreenState extends State<SignInPhoneScreen> {
         mainAxisAlignment: MainAxisAlignment.start,
         // ignore: prefer_const_literals_to_create_immutables
         children: [
-          const Padding(
-                  padding: EdgeInsets.fromLTRB(10,10,10,20),
+          Padding(
+                  padding: const EdgeInsets.fromLTRB(10,10,10,20),
                   child:  TextField(
-                    decoration: InputDecoration(
+                    controller: phoneController,
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       icon: Icon(Icons.phone),
                       hintText: 'Phone Number',
@@ -36,7 +61,7 @@ class _SignInPhoneScreenState extends State<SignInPhoneScreen> {
                 CupertinoButton(
                   color: Colors.blue,
                   onPressed: (){
-                    Navigator.push(context, CupertinoPageRoute(builder: (context) => const OtpScreen()));
+                    sendOtp();
                   },
                   child: const Text('Send OTP'), 
                   )
