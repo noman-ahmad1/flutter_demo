@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
 
-
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
 
@@ -20,7 +19,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
             // ignore: use_build_context_synchronously
             Navigator.pushReplacement(context, CupertinoPageRoute(builder: ((context) => const HomeScreen())));
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

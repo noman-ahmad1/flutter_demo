@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                    child: const Text('E mail'),),
               ),
             ),
-               Padding(
+            Padding(
                  padding: const EdgeInsets.all(8.0),
                  child: SizedBox(
                   height: 50,

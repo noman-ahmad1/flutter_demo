@@ -1,4 +1,3 @@
-
 import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -33,7 +32,6 @@ class _OtpScreenState extends State<OtpScreen> {
         log(ex.code.toString());
       }
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +61,7 @@ class _OtpScreenState extends State<OtpScreen> {
                     verifyOTP();
                   },
                   child: const Text('Verify OTP'), 
-                  )
+          ),
         ],
       ),
     );

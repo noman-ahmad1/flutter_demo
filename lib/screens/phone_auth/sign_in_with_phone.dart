@@ -33,9 +33,7 @@ class _SignInPhoneScreenState extends State<SignInPhoneScreen> {
       codeAutoRetrievalTimeout: (verificationId) {},
       timeout: const Duration(seconds: 30)
     );
-
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,7 +62,7 @@ class _SignInPhoneScreenState extends State<SignInPhoneScreen> {
                     sendOtp();
                   },
                   child: const Text('Send OTP'), 
-                  )
+          ),
         ],
       ),
     );
