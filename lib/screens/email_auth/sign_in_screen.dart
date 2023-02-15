@@ -92,7 +92,8 @@ class _SignInScreenState extends State<SignInScreen> {
                 CupertinoButton(
                   onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpScreen() ),); 
                 },
-                child: const Text('Create an Account'),),
+                child: const Text('Create an Account'),
+                ),
               ],
             ),
           ),

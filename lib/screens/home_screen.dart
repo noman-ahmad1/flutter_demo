@@ -48,7 +48,7 @@ class HomeScreen extends StatelessWidget {
             ),
             Padding(
                  padding: const EdgeInsets.all(8.0),
-                 child: SizedBox(
+              child: SizedBox(
                   height: 50,
                    width: 300,
                    child: CupertinoButton(
@@ -57,8 +57,8 @@ class HomeScreen extends StatelessWidget {
                                 Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInPhoneScreen()));
                                },
                    child: const Text('Phone Number'),),
-                 ),
-               ),
+              ),
+            ),
           ],
         ),
       ),
