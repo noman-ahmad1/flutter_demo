@@ -18,21 +18,7 @@ class _SignInPhoneScreenState extends State<SignInPhoneScreen> {
 
   void sendOtp() async {
     // ignore: prefer_interpolation_to_compose_strings
-    String phone = "+92" + phoneController.text.trim();
-    await FirebaseAuth.instance.verifyPhoneNumber(
-      phoneNumber: phone,
-      codeSent: (verificationId, resendToken){
-        Navigator.push(context, CupertinoPageRoute(builder: ((context) =>  OtpScreen(verificationId: verificationId)
-        )));
-      },
-      // ignore: avoid_types_as_parameter_names, non_constant_identifier_names
-      verificationCompleted: (Credential){},
-      verificationFailed: (exp){
-        log(exp.code.toString());
-      },
-      codeAutoRetrievalTimeout: (verificationId) {},
-      timeout: const Duration(seconds: 30)
-    );
+    
   }
   @override
   Widget build(BuildContext context) {
@@ -59,7 +45,21 @@ class _SignInPhoneScreenState extends State<SignInPhoneScreen> {
                 CupertinoButton(
                   color: Colors.blue,
                   onPressed: (){
-                    sendOtp();
+                    String phone = "+92" + phoneController.text.trim();
+                       FirebaseAuth.instance.verifyPhoneNumber(
+                        phoneNumber: phone,
+                        codeSent: (verificationId, resendToken){
+                          Navigator.push(context, CupertinoPageRoute(builder: ((context) =>  OtpScreen(verificationId: verificationId)
+                          )));
+                        },
+                        // ignore: avoid_types_as_parameter_names, non_constant_identifier_names
+                        verificationCompleted: (Credential){},
+                        verificationFailed: (exp){
+                          log(exp.code.toString());
+                        },
+                        codeAutoRetrievalTimeout: (verificationId) {},
+                        timeout: const Duration(seconds: 30)
+                      );
                   },
                   child: const Text('Send OTP'), 
           ),
