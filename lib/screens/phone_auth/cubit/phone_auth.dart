@@ -8,6 +8,7 @@ class PhoneAuthCubit extends Cubit<PhoneAuthState> {
   String? _verificationId;
 
   void sendOtp(String phoneNumber) async {
+    emit(PhoneAuthLoadingState());
     await _auth.verifyPhoneNumber(
       phoneNumber: phoneNumber,
       codeSent: (verificationId, forceResendingToken) {
@@ -26,6 +27,7 @@ class PhoneAuthCubit extends Cubit<PhoneAuthState> {
     );
   }
   void verifyOtp(String otp) async {
+    emit(PhoneAuthLoadingState());
     PhoneAuthCredential credential = PhoneAuthProvider.credential(
       verificationId: _verificationId!, smsCode: otp);
       signInWithPhone(credential);
