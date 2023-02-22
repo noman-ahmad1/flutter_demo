@@ -1,4 +1,3 @@
-
 import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +44,7 @@ class _SignInPhoneScreenState extends State<SignInPhoneScreen> {
                 CupertinoButton(
                   color: Colors.blue,
                   onPressed: (){
+                    // ignore: prefer_interpolation_to_compose_strings
                     String phone = "+92" + phoneController.text.trim();
                        FirebaseAuth.instance.verifyPhoneNumber(
                         phoneNumber: phone,
