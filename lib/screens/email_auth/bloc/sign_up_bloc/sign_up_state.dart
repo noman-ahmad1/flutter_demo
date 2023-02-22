@@ -1,14 +1,14 @@
 import 'package:equatable/equatable.dart';
 
-class RegisterState extends Equatable {
+class SignUpState extends Equatable {
   @override
   List<Object> get props => [];
 }
 
-class RegisterInitialState extends RegisterState {}
+class SignUpInitialState extends SignUpState {}
 
-class RegisterValidState extends RegisterState {}
+class SignUpValidState extends SignUpState {}
 
-class RegisterLoadingState extends RegisterState {}
+class SignUpLoadingState extends SignUpState {}
 
-class RegisterErrorState extends RegisterState {}
+class SignUpErrorState extends SignUpState {}
