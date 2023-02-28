@@ -10,9 +10,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-);
+  );
   runApp(const MyApp());
-
 }
 
 class MyApp extends StatelessWidget {
@@ -22,7 +21,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: (FirebaseAuth.instance.currentUser != null) ? const DashboardScreen() : const HomeScreen()
-    );
+          home: (FirebaseAuth.instance.currentUser != null)
+              ? const DashboardScreen()
+              : const HomeScreen());
   }
 }

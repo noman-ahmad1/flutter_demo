@@ -11,4 +11,9 @@ class SignUpValidState extends SignUpState {}
 
 class SignUpLoadingState extends SignUpState {}
 
-class SignUpErrorState extends SignUpState {}
+class SignUpSubmittedState extends SignUpState {}
+
+class SignUpErrorState extends SignUpState {
+  final String? errorMessage;
+  SignUpErrorState(String s, {this.errorMessage});
+}

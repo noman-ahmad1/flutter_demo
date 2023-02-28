@@ -5,6 +5,8 @@ abstract class SignUpEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class SignUpStartEvent extends SignUpEvent {}
+class CreateAccountEvent extends SignUpEvent {}
 
 class SignUpSubmitEvent extends SignUpEvent {}
+
+class OnPressEvent extends SignUpEvent {}
