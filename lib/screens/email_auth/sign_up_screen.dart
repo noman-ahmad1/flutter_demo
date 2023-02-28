@@ -99,7 +99,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           CupertinoButton(
                 color: Colors.blue,
                 onPressed: () {
-                  CreateAccountEvent();
+                  createAccount();
                 },
                 child: const Text('Sign Up'),
               )
