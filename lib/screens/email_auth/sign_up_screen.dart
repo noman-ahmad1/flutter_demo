@@ -2,7 +2,6 @@ import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_application_1/screens/email_auth/bloc/sign_up_bloc/sign_up_event.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
