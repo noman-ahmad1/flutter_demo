@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Image(image: AssetImage(AppRefs.logoImage)),
+            const Image(image: AssetImage('assets/logo.png')),
             SizedBox(
               height: MediaQuery.of(context).size.height*0.3,
           
