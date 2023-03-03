@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:practice_application_1/screens/email_auth/sign_in_screen.dart';
 import 'package:practice_application_1/screens/phone_auth/sign_in_with_phone.dart';
-
 import '../utils/app_refs.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -20,7 +19,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Image(image: AssetImage(AppRefs.nasaImage)),
+            const Image(image: AssetImage(AppRefs.logoImage)),
             SizedBox(
               height: MediaQuery.of(context).size.height*0.3,
           

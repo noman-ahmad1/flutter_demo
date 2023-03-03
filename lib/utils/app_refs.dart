@@ -1,2 +1,2 @@
 class AppRefs {
-static const String nasaImage = "assets/logo.png";}
+static const String logoImage = "assets/logo.png";}
