@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:practice_application_1/screens/email_auth/sign_in_screen.dart';
 import 'package:practice_application_1/screens/phone_auth/sign_in_with_phone.dart';
-import '../utils/app_refs.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
