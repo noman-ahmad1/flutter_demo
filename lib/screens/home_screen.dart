@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:practice_application_1/screens/email_auth/sign_in_screen.dart';
@@ -10,57 +9,73 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('NASA'),
-        centerTitle: true,
-      ),
+      backgroundColor: const Color(0xffE5E5E5),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Image(image: AssetImage('assets/logo.png')),
+             Padding(
+              padding: EdgeInsets.only(top: MediaQuery.of(context).size.width*0.29),
+              child: const Image(image: AssetImage('assets/Framelogo.png')),
+            ),
             SizedBox(
-              height: MediaQuery.of(context).size.height*0.3,
-          
+              height: MediaQuery.of(context).size.height*0.04,
             ),
-            Text('Sign In Using',
-            style: GoogleFonts.ibmPlexSans(
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.italic,
-            ),
-            ),
-            const SizedBox(
-              height: 30,
-              width: 100,
-            ),
+            Center(
+              child: Text('Connect easily with \n your family and friends \n over countries',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.mulish(
+                fontSize: 30,
+                fontWeight: FontWeight.w800
+              ),
+              )),
+               SizedBox(
+              height: MediaQuery.of(context).size.height*0.15,
+              ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SizedBox(
-                height: 60,
-                width: 370,
-                child: CupertinoButton(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(30),
-                  onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInScreen()));
-                  },
-                   child: Text('E-mail',style: GoogleFonts.ibmPlexSans(fontSize: 20,fontWeight: FontWeight.w700),),),
+              padding: const EdgeInsets.only(bottom: 8.0),
+              child: Text('Sign In Using',
+              style: GoogleFonts.mulish(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
               ),
             ),
-            Padding(
-                 padding: const EdgeInsets.all(8.0),
-              child: SizedBox(
-                  height: 60,
-                   width: 370,
-                   child: CupertinoButton(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(30),
-                               onPressed: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInPhoneScreen()));
-                               },
-                   child: Text('Phone Number',style: GoogleFonts.ibmPlexSans(fontSize: 20,fontWeight: FontWeight.w700),),),
+            Container(
+              decoration: BoxDecoration(
+                color: const Color(0xff002DE3),
+                borderRadius: BorderRadius.circular(30),
               ),
+              height: MediaQuery.of(context).size.height*0.07,
+              width: MediaQuery.of(context).size.width*0.8,
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInScreen()));
+                },
+                 child: Center(
+                  child: Text(
+                    'E-mail',
+                    style: GoogleFonts.mulish(
+                      fontSize: 20,fontWeight: FontWeight.w700),)),),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height*0.02,
+            ),
+            Container(
+               decoration: BoxDecoration(
+                color: const Color(0xff002DE3),
+                borderRadius: BorderRadius.circular(30),
+              ),
+              height: MediaQuery.of(context).size.height*0.07,
+              width: MediaQuery.of(context).size.width*0.8,
+              child: GestureDetector(
+                          onTap: (){
+                           Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInPhoneScreen()));
+                          },
+              child: Center(
+                child: Text(
+                  'Phone Number',
+                  style: GoogleFonts.mulish(
+                    fontSize: 20,fontWeight: FontWeight.w700),)),),
             ),
           ],
         ),
