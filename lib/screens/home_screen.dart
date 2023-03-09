@@ -40,43 +40,47 @@ class HomeScreen extends StatelessWidget {
               ),
               ),
             ),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color(0xff002DE3),
-                borderRadius: BorderRadius.circular(30),
+            GestureDetector(
+               onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInScreen()));
+                  },
+              child: Container(
+                decoration: BoxDecoration(
+                  color: const Color(0xff002DE3),
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                height: MediaQuery.of(context).size.height*0.07,
+                width: MediaQuery.of(context).size.width*0.8,
+                   child: Center(
+                    child: Text(
+                      'E-mail',
+                      style: GoogleFonts.mulish(
+                        fontSize: 20,fontWeight: FontWeight.w700,
+                        color: const Color(0xffE5E5E5),
+                        ),)),),
               ),
-              height: MediaQuery.of(context).size.height*0.07,
-              width: MediaQuery.of(context).size.width*0.8,
-              child: GestureDetector(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInScreen()));
-                },
-                 child: Center(
-                  child: Text(
-                    'E-mail',
-                    style: GoogleFonts.mulish(
-                      fontSize: 20,fontWeight: FontWeight.w700),)),),
-            ),
             SizedBox(
               height: MediaQuery.of(context).size.height*0.02,
             ),
-            Container(
-               decoration: BoxDecoration(
-                color: const Color(0xff002DE3),
-                borderRadius: BorderRadius.circular(30),
+            GestureDetector(
+              onTap: (){
+                             Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInPhoneScreen()));
+                            },
+              child: Container(
+                 decoration: BoxDecoration(
+                  color: const Color(0xff002DE3),
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                height: MediaQuery.of(context).size.height*0.07,
+                width: MediaQuery.of(context).size.width*0.8,
+                child: Center(
+                  child: Text(
+                    'Phone Number',
+                    style: GoogleFonts.mulish(
+                      fontSize: 20,fontWeight: FontWeight.w700,
+                      color: const Color(0xffE5E5E5),
+                      ),)),),
               ),
-              height: MediaQuery.of(context).size.height*0.07,
-              width: MediaQuery.of(context).size.width*0.8,
-              child: GestureDetector(
-                          onTap: (){
-                           Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInPhoneScreen()));
-                          },
-              child: Center(
-                child: Text(
-                  'Phone Number',
-                  style: GoogleFonts.mulish(
-                    fontSize: 20,fontWeight: FontWeight.w700),)),),
-            ),
           ],
         ),
       ),

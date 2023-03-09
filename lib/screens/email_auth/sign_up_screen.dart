@@ -56,7 +56,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
               controller: emailController,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                icon: Icon(Icons.email),
                 hintText: 'Email Address',
               ),
               keyboardType: TextInputType.emailAddress,
@@ -71,7 +70,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
               controller: passwordController,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                icon: Icon(Icons.password),
                 hintText: 'Enter Password',
               ),
               keyboardType: TextInputType.visiblePassword,
@@ -86,7 +84,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
               controller: confirmPasswordController,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                icon: Icon(Icons.password),
                 hintText: 'Confirm Password',
               ),
               keyboardType: TextInputType.visiblePassword,
