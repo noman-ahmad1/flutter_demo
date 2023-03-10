@@ -43,6 +43,7 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset : false,
       backgroundColor: const Color(0xffE5E5E5),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -52,7 +53,8 @@ class _SignInScreenState extends State<SignInScreen> {
             // ignore: prefer_const_literals_to_create_immutables
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30.0,vertical: 55.0),
+                padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.08,
+                vertical: MediaQuery.of(context).size.height*0.065),
                 child: GestureDetector(
                   onTap: () {
                     Navigator.pop(context);
